@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страница учащегося</title>
+
+<!-- Внешний файл стилей -->
+<link rel="stylesheet" href="external.css">
+
+<style>
+
+    .favorite-sports {
+        list-style-type: none;
+        counter-reset: my-counter 0;
+    }
+
+    .favorite-sports li::before {
+        content: counter(my-counter, upper-roman) ". ";
+        counter-increment: my-counter;
+    }
+
+    a:link {
+        color: green;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: green;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    @import url("imported.css"); /* Импорт стилей из файла imported.css */
+
+</style>
+
+<style>
+    /* Внутритеговое включение таблицы стилей */
+    p {
+        color: lightblue;
+    }
+</style>
+
+</head>
+<body>
+    <p>ФИО учащегося</p>
+    <h3>Дата рождения</h3>
+    <ol class="favorite-sports">
+        <li>Футбол</li>
+        <li>Баскетбол</li>
+        <li>Волейбол</li>
+    </ol>
+    <a href="another_page.html">Ссылка на другую страницу</a>
+
+    <!-- Ответ на вопрос о каскадности таблиц стилей -->
+    <p>Каскадность таблиц стилей проявляется в возможности определения стилей для одного и того же элемента в разных местах кода. Стили, определенные более специфично, имеют приоритет перед менее специфичными стилями. Например, стили из внутреннего тега &lt;style&gt; переопределят стили из внешнего файла стилей.</p>
+</body>
+</html>

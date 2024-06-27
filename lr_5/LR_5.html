@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блочная модель</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        column-gap: 10px;
+        gap: 10px;
+        height: 100vh;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: stretch;
+        column-gap: 10px;
+        gap: 10px;
+    }
+    .item {
+        border: 1px solid black;
+        text-align: center;
+        padding: 50px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+        order: 0;
+    }
+	.item-11 {
+		padding: 150px;
+	}
+    .item-1 {
+        flex: 3;
+		padding: 100px;
+    }
+    .item-2, .item-3 {
+        flex: 1;
+		padding: 100px;
+    }
+    .full-width {
+        flex-basis: 100%;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+        </div>
+        <div class="row">
+            <div class="item item-11" style="flex: 1">4</div>
+            <div class="item item-11" style="flex: 1">5</div>
+            <div class="item item-11" style="flex: 1">6</div>
+        </div>
+        <div class="row">
+            <div class="item" style="flex: 1">7</div>
+            <div class="item" style="flex: 1">8</div>
+            <div class="item" style="flex: 1">9</div>
+        </div>
+        <div class="row">
+            <div class="full-width item">10</div>
+        </div>
+    </div>
+</body>
+</html>

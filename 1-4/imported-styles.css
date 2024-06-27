@@ -1,0 +1,27 @@
+#projects {
+    font-weight: bold;
+}
+
+#contact {
+    background-color: lightyellow;
+}
+
+h2 {
+    color: blue;
+}
+
+
+a {
+    color: blue; 
+    text-decoration: none; 
+}
+
+
+a:hover {
+    color: red; 
+}
+
+
+a:visited {
+    color: purple; 
+}

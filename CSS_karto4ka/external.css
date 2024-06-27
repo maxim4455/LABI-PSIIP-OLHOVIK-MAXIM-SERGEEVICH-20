@@ -1,0 +1,17 @@
+/* external.css */
+/* Внешний файл стилей */
+body {
+    background-image: url('123123.jpg');
+    background-repeat: no-repeat;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24mm;
+    color: blue;
+}
+
+h3 {
+    text-decoration: underline;
+    color: red;
+    text-align: justify;
+}
+
+

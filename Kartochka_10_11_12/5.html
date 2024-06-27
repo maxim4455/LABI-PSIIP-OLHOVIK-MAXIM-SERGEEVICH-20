@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <script>
+        var S1 = "Я люблю Беларусь";
+        var S2 = "Я учусь в Политехническом колледже";
+
+        // Длина строки S1
+        var lengthS1 = S1.length;
+        document.write("Длина строки S1: " + lengthS1 + "<br>");
+
+        // Выделение 10 символов из строки S1
+        var selectedChars = S1.substr(0, 10);
+        document.write("Выделенные 10 символов из строки S1: " + selectedChars + "<br>");
+
+        // Замена всех встречающихся "о" на "а" в строке S2
+        var replacedS2 = S2.replace(/о/g, "а");
+        document.write("Измененная строка S2: " + replacedS2);
+    </script>
+</body>
+</html>

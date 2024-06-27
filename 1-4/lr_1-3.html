@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио-резюме</title>
+    <link rel="stylesheet" type="text/css" href="external-styles.css">
+    <style>
+        @import url("imported-styles.css");
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ольховик Максим Сергеевич</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О себе</a></li>
+                <li><a href="#skills">Навыки</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="photo.html">Фотография</a></li> <!-- Ссылка на новую страницу -->
+            </ul>
+        </nav>
+    </header>
+	
+    <section id="about" style="background-color: lightblue;">
+        <h2>О себе</h2>
+        <p>Я люблю Политех</p>
+        <p><em>Этот текст будет курсивом</em></p>
+    </section>
+    <section id="skills">
+        <h2>Навыки</h2>ф
+        <ul>
+            <li>HTML</li>
+            <li>C#</li>
+            <li>Python</li>
+            <li><strong>Этот текст будет жирным</strong></li>
+        </ul>
+    </section>
+    <section id="projects" style="color: red;">
+        <h2>Проекты</h2>
+        <ul>
+            <li><a href="https://github.com/maxim4455/CSHARP">Проект 1</a></li>
+            <li><a href="https://github.com/maxim4455/PRAKTIKA">Проект 2</a></li>
+            <li><u>Этот текст будет подчеркнутым</u></li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Email:versysie432@gmail.com</p>
+        <p>Телефон: +375 33 362-74-05</p>
+    </section>
+    <section id="images">
+        <h2>Фотографии</h2>
+        <img src="12341234.png" alt="Фотография 1">
+    </section>
+    <section id="audio-video">
+        <h2>Аудио и видео</h2>
+        <audio controls>
+            <source src="muzyka-dlya-sna-1-relaks.mp3" type="audio/mpeg">
+        </audio>
+        <video controls>
+            <source src="vidik22.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section id="tables">
+        <h2>Таблицы</h2>
+        <table>
+            <tr>
+                <th>Заголовок 1</th>
+                <th>Заголовок 2</th>
+            </tr>
+            <tr>
+                <td>Ячейка 1</td>
+                <td>Ячейка 2</td>
+            </tr>
+            <tr>
+                <td colspan="2">Объединенная ячейка</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Ячейка 3</td>
+                <td>Ячейка 4</td>
+            </tr>
+        </table>
+    </section>
+    <section id="forms">
+        <h2>Формы</h2>
+        <form action="#" method="post">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="submit" value="Отправить">
+        </form>
+    </section>
+    <section id="links">
+        <h2>Гиперссылки</h2>
+        <p>Внутренние ссылки:</p>
+        <ul>
+            <li><a href="#about">О себе</a></li>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <p>Внешние ссылки:</p>
+        <ul>
+            <li><a href="https://github.com/maxim4455">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/yourusername">LinkedIn</a></li>
+        </ul>
+    </section>
+    <section id="special-characters">
+        <h2>Спецсимволы</h2>
+        <p>Спецсимволы: &copy; &lt; &gt; &amp;</p>
+    </section>
+    <section id="semantic-tags">
+        <h2>Семантические теги</h2>
+        <article>
+            <h3>Статья 1</h3>
+            <p>Текст статьи.</p>
+        </article>
+        <aside>
+            <h3>Дополнительная информация</h3>
+            <p>Я люблю пиццу</p>
+        </aside>
+        <footer>
+            <p>© 2024 Ольховик Максим Сергеевич</p>
+        </footer>
+    </section>
+</body>
+</html>

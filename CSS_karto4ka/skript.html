@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Examples</title>
+    <script>
+        function inlineMessage() {
+            alert('Inline JavaScript');
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Examples</h1>
+    
+    <!-- 1. Встроенный JavaScript -->
+    <button onclick="inlineMessage()">Inline JavaScript</button>
+    
+    <!-- 2. Внутренний (embedded) JavaxScript -->
+    <script>
+        function embeddedMessage() {
+            alert('Embedded JavaScript');
+        }
+    </script>
+    <button onclick="embeddedMessage()">Embedded JavaScript</button>
+    
+    <!-- 3. Внешний JavaScript -->
+    <button onclick="externalMessage()">External JavaScript</button>
+    <script src="script.js"></script>
+    
+    <!-- 4. Асинхронное подключение JavaScript -->
+    <button onclick="loadAsyncScript()">Async JavaScript</button>
+    <script>
+        function loadAsyncScript() {
+            var script = document.createElement('script');
+            script.src = 'script.js';
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        #birthplace {
+            font-weight: bold;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        .styled {
+            background-color: lightblue;
+            font-family: Verdana, sans-serif;
+            font-size: 14px;
+            color: green;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .error {
+            border: 1px solid red;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group .phone-input {
+            display: flex;
+        }
+        .form-group .phone-input input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-group .phone-input input:first-child {
+            width: 40px;
+        }
+        .form-group .phone-input input:nth-child(2) {
+            width: 50px;
+        }
+        .form-group .phone-input input:last-child {
+            flex: 1;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-actions .save-btn {
+            background-color: #f60;
+            color: #fff;
+        }
+        .form-actions .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <p id="name">Ольховик Максим Сергеевич</p>
+    <img src="https://via.placeholder.com/300" alt="Placeholder image">
+
+    <button onclick="changeBackground()">Изменить фон</button>
+    <button onclick="changeFont()">Изменить шрифт</button>
+    <button onclick="addImageBorder()">Добавить рамку к изображению</button>
+
+    <!-- Задание 1: Форма для валидации -->
+    <div class="form-container">
+        <div class="form-group">
+            <label for="recipient-name">Имя получателя:</label>
+            <input type="text" id="recipient-name" value="Dmitriy Naumov">
+        </div>
+        <div class="form-group">
+            <label for="country">Страна/Регион:</label>
+            <select id="country">
+                <option>Russian Federation</option>
+                <!-- Добавьте другие страны/регионы здесь -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address">Улица, дом, квартира:</label>
+            <input type="text" id="address" value="Gogolya 37-15">
+        </div>
+        <div class="form-group">
+            <label for="region">Край/Область/Регион:</label>
+            <select id="region">
+                <option>Moscow</option>
+                <!-- Добавьте другие регионы здесь -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">Город:</label>
+            <input type="text" id="city" value="Moscow">
+        </div>
+        <div class="form-group">
+            <label for="postal-code">Почтовый индекс:</label>
+            <input type="text" id="postal-code" value="109117">
+            <div>
+                <input type="checkbox" id="no-postal-code">
+                <label for="no-postal-code">В моём адресе нет почтового кода.</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Мобильный телефон:</label>
+            <div class="phone-input">
+                <input type="text" value="+7">
+                <input type="text" value="495">
+                <input type="text" value="1234567" style="background-color: #ffffcc;">
+            </div>
+            <div class="form-group">
+                <label for="alt-phone">or</label>
+                <input type="text" id="alt-phone">
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Отмена</button>
+        </div>
+    </div>
+
+    <script>
+        // Задание 2: Получить информацию о статусе загрузки документа
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var loadingStatus = document.createElement('p');
+                loadingStatus.textContent = 'Страница загружена';
+                document.body.appendChild(loadingStatus);
+            }, 5000);
+        });
+
+        // Задание 3: Создать новый узел "Место рождения" и вставить его после изображения
+        var birthplace = document.createElement('p');
+        birthplace.textContent = 'Место рождения: Минск';
+        birthplace.id = 'birthplace';
+        var image = document.querySelector('img');
+        image.parentNode.insertBefore(birthplace, image.nextSibling);
+
+        // Функции для изменения стилей по нажатию кнопок
+        function changeBackground() {
+            document.body.style.backgroundColor = 'lightblue';
+        }
+
+        function changeFont() {
+            document.body.style.fontFamily = 'Verdana, sans-serif';
+            document.body.style.fontSize = '14px';
+            document.body.style.color = 'green';
+        }
+
+        function addImageBorder() {
+            var images = document.querySelectorAll('img');
+            images.forEach(function(image) {
+                image.style.border = '1px solid red';
+            });
+        }
+
+        // Задание 5: Получить информацию о полном URL-адресе документа через 5 секунд после загрузки
+        setTimeout(function() {
+            var fullUrl = window.location.href;
+            alert('Полный URL-адрес документа: ' + fullUrl);
+        }, 5000);
+
+        // Валидация формы
+        function validateForm() {
+            var formIsValid = true;
+            var recipientName = document.getElementById('recipient-name');
+            var postalCode = document.getElementById('postal-code');
+            var phoneNumber = document.querySelector('.phone-input input:last-child');
+
+            // Удаляем предыдущие сообщения об ошибках
+            var errorMessages = document.querySelectorAll('.error-message');
+            errorMessages.forEach(function(message) {
+                message.remove();
+            });
+
+            // Сбрасываем стили ошибок
+            var errorFields = document.querySelectorAll('.error');
+            errorFields.forEach(function(field) {
+                field.classList.remove('error');
+            }); 
+
+            // Проверка заполненности полей
+            if (recipientName.value.trim() === '') {
+                showError(recipientName, 'Это поле обязательно для заполнения');
+                formIsValid = false;
+            }
+            if (postalCode.value.trim() === '' || isNaN(postalCode.value) || postalCode.value.length !== 6) {
+                showError(postalCode, 'Введите корректный почтовый индекс (6 цифр)');
+                formIsValid = false;
+            }
+            if (phoneNumber.value.trim() === '' || isNaN(phoneNumber.value) || phoneNumber.value.length !== 7) {
+                showError(phoneNumber, 'Введите корректный номер телефона (7 цифр)');
+                formIsValid = false;
+            }
+
+            return formIsValid;
+        }
+		
+        function showError(element, message) {
+            var error = document.createElement('div');
+            error.classList.add('error-message');
+            error.textContent = message;
+            element.classList.add('error');
+            element.parentNode.insertBefore(error, element.nextSibling);
+        }
+
+        document.querySelector('.save-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                alert('Форма успешно сохранена');
+            }
+        });
+    </script>
+</body>
+</html>

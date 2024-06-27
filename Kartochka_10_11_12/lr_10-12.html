@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <!-- Task 1: Show Current Year -->
+    <button onclick="showCurrentYear()">Показать год</button>
+    <br><br>
+
+    <!-- Task 2: Display Name 25 Times -->
+    <script>
+        for (var i = 0; i < 25; i++) {
+            document.write("Ольховик Максим<br>");
+        }
+    </script>
+    <br><br>
+
+    <!-- Task 3: Swap Minimum Element in Array -->
+    <div id="output"></div>
+    <script>
+        var arr = [1, 2, 10, 4, 20];
+
+        // Находим минимальный элемент в массиве
+        var minIndex = 0;
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+
+        // Переставляем минимальный элемент с последним
+        var temp = arr[minIndex];
+        arr[minIndex] = arr[arr.length - 1];
+        arr[arr.length - 1] = temp;
+
+        // Выводим исходный и измененный массив
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "Исходный массив: 1, 2, 10, 4, 20. Измененный массив: " + arr.join(", ") + "<br>";
+    </script>
+    <br><br>
+
+    <!-- Task 4: Calculate Formula (assuming the function calculateFormula is defined in script.js) -->
+    <script>
+        function calculateFormula(t) {
+            // This function should be defined in script.js, here is a sample implementation
+            return Math.pow(t, 2) + 2 * t + 1; // Sample formula: t^2 + 2t + 1
+        }
+
+        var t = 5; // Пример значения t для расчета
+        var result = calculateFormula(t);
+        if (result !== undefined) {
+            document.write("Результат вычислений: " + result.toFixed(2));
+        }
+    </script>
+    <br><br>
+
+    <!-- Task 5: String Manipulations -->
+    <script>
+        var S1 = "Я люблю Беларусь";
+        var S2 = "Я учусь в Политехническом колледже";
+
+        // Длина строки S1
+        var lengthS1 = S1.length;
+        document.write("Длина строки S1: " + lengthS1 + "<br>");
+
+        // Выделение 10 символов из строки S1
+        var selectedChars = S1.substr(0, 10);
+        document.write("Выделенные 10 символов из строки S1: " + selectedChars + "<br>");
+
+        // Замена всех встречающихся "о" на "а" в строке S2
+        var replacedS2 = S2.replace(/о/g, "а");
+        document.write("Измененная строка S2: " + replacedS2);
+    </script>
+
+    <!-- Scripts Section -->
+    <script>
+        function showCurrentYear() {
+            var currentYear = new Date().getFullYear();
+            alert("Текущий год: " + currentYear);
+        }
+    </script>
+</body>
+</html>

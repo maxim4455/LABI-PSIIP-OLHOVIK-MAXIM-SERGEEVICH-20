@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <div id="output"></div>
+    
+    <script>
+        var arr = [1, 2, 10, 4, 20];
+        
+        // Находим минимальный элемент в массиве
+        var minIndex = 0;
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+        
+        // Переставляем минимальный элемент с последним
+        var temp = arr[minIndex];
+        arr[minIndex] = arr[arr.length - 1];
+        arr[arr.length - 1] = temp;
+        
+        // Выводим исходный и измененный массив
+        var outputDiv = document.getElementById("output");
+        outputDiv.innerHTML = "Исходный массив: 1, 2, 10, 4, 20. Измененный массив:  " + arr.join(", ") + "<br>";
+    </script>
+</body>
+</html>
